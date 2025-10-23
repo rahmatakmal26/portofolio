@@ -158,3 +158,27 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+  // Ambil semua gambar di sertifikat
+  const images = document.querySelectorAll('.blog-banner-box img');
+  const modal = document.getElementById('imageModal');
+  
+  const closeBtn = document.querySelector('.close');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Tutup modal kalau klik di luar gambar
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+
