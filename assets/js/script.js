@@ -175,7 +175,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
     modal.style.display = "none";
   }
 
-  // Tutup modal kalau klik di luar gambar
+  // Tutup modal 
   modal.onclick = function(e) {
     if (e.target === modal) {
       modal.style.display = "none";
