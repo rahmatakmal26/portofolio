@@ -158,27 +158,26 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-  // Ambil semua gambar di sertifikat
-  const images = document.querySelectorAll('.blog-banner-box img');
-  const modal = document.getElementById('imageModal');
-  
-  const closeBtn = document.querySelector('.close');
+  // Modal khusus untuk sertifikat
+const certImages = document.querySelectorAll('.blog-banner-box img');
+const certModal = document.getElementById('certificateModal');
+const certModalImg = document.getElementById('certificateImage');
+const certCloseBtn = certModal.querySelector('.close');
 
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      modal.style.display = "block";
-      modalImg.src = img.src;
-    });
+certImages.forEach(img => {
+  img.addEventListener('click', () => {
+    certModal.style.display = "block";
+    certModalImg.src = img.src;
   });
+});
 
-  closeBtn.onclick = function() {
-    modal.style.display = "none";
+certCloseBtn.onclick = function() {
+  certModal.style.display = "none";
+}
+
+// Tutup modal kalau klik di luar gambar
+certModal.onclick = function(e) {
+  if (e.target === certModal) {
+    certModal.style.display = "none";
   }
-
-  // Tutup modal 
-  modal.onclick = function(e) {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  }
-
+}
