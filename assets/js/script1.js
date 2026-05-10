@@ -181,3 +181,32 @@ certModal.onclick = function(e) {
     certModal.style.display = "none";
   }
 }
+
+// Modal khusus untuk project
+const projectLinks = document.querySelectorAll('.project-link');
+const projectModal = document.getElementById('projectModal');
+const projectModalImg = document.getElementById('projectImage');
+const projectModalTitle = document.getElementById('projectTitle');
+const projectModalCategory = document.getElementById('projectCategory');
+const projectCloseBtn = projectModal.querySelector('.close');
+
+projectLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    projectModal.style.display = "block";
+    projectModalImg.src = link.dataset.image;
+    projectModalTitle.textContent = link.dataset.title;
+    projectModalCategory.textContent = link.dataset.category;
+  });
+});
+
+projectCloseBtn.onclick = function() {
+  projectModal.style.display = "none";
+}
+
+// Tutup modal project kalau klik di luar modal
+projectModal.onclick = function(e) {
+  if (e.target === projectModal) {
+    projectModal.style.display = "none";
+  }
+}

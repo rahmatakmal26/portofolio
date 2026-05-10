@@ -628,7 +628,7 @@ Teuku Umar. Memiliki kepribadian yang mudah bergaul, rapi, disiplin serta siap b
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="#" class="project-link" data-image="./assets/images/datacore.png" data-title="DataCore AI" data-category="Web development">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -646,7 +646,7 @@ Teuku Umar. Memiliki kepribadian yang mudah bergaul, rapi, disiplin serta siap b
             </li>
            
             <li class="project-item  active" data-filter-item data-category="ai engineer">
-              <a href="#">
+              <a href="#" class="project-link" data-image="./assets/images/seucom.png" data-title="Chatbot Seucom Indonesia" data-category="AI Engineer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -664,7 +664,7 @@ Teuku Umar. Memiliki kepribadian yang mudah bergaul, rapi, disiplin serta siap b
             </li>
 
             <li class="project-item  active" data-filter-item data-category="ai engineer">
-              <a href="#">
+              <a href="#" class="project-link" data-image="./assets/images/kemendikdasmen.png" data-title="Chatbot Kemendikdasmen" data-category="AI Engineer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -682,7 +682,7 @@ Teuku Umar. Memiliki kepribadian yang mudah bergaul, rapi, disiplin serta siap b
             </li>
 
             <li class="project-item  active" data-filter-item data-category="ai engineer">
-              <a href="#">
+              <a href="#" class="project-link" data-image="./assets/images/promptgatex.png" data-title="Chatbot AI Prompt Gate X" data-category="AI Engineer">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -700,7 +700,7 @@ Teuku Umar. Memiliki kepribadian yang mudah bergaul, rapi, disiplin serta siap b
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="#" class="project-link" data-image="./assets/images/simrs.png" data-title="SIMRS (Sistem Informasi Manajemen Rumah Sakit)" data-category="Web development">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -718,7 +718,7 @@ Teuku Umar. Memiliki kepribadian yang mudah bergaul, rapi, disiplin serta siap b
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <a href="#" class="project-link" data-image="./assets/images/webkiosk.png" data-title="Web Kiosk Kejaksaan" data-category="Web development">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -793,6 +793,46 @@ Teuku Umar. Memiliki kepribadian yang mudah bergaul, rapi, disiplin serta siap b
   color: #ff6666;
 }
 
+/* Project Modal Styles */
+.project-modal-content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  animation: zoom 0.3s ease;
+  background: #fff;
+  padding: 20px;
+}
+
+.project-modal-img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.project-modal-info {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.project-modal-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.project-modal-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
 
 
       </style>
@@ -810,6 +850,18 @@ Teuku Umar. Memiliki kepribadian yang mudah bergaul, rapi, disiplin serta siap b
 <div id="certificateModal" class="modal">
   <span class="close">&times;</span>
   <img class="modal-content" id="certificateImage">
+</div>
+
+<!-- Modal untuk project -->
+<div id="projectModal" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-content project-modal-content">
+    <img id="projectImage" class="project-modal-img">
+    <div class="project-modal-info">
+      <h3 id="projectTitle"></h3>
+      <p id="projectCategory"></p>
+    </div>
+  </div>
 </div>
 
 
