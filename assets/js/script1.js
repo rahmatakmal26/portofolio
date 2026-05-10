@@ -183,30 +183,44 @@ certModal.onclick = function(e) {
 }
 
 // Modal khusus untuk project
-const projectLinks = document.querySelectorAll('.project-link');
-const projectModal = document.getElementById('projectModal');
-const projectModalImg = document.getElementById('projectImage');
-const projectModalTitle = document.getElementById('projectTitle');
-const projectModalCategory = document.getElementById('projectCategory');
-const projectCloseBtn = projectModal.querySelector('.close');
+document.addEventListener('DOMContentLoaded', function() {
+  const projectLinks = document.querySelectorAll('.project-link');
+  const projectModal = document.getElementById('projectModal');
+  
+  if (projectLinks.length > 0 && projectModal) {
+    const projectModalImg = document.getElementById('projectImage');
+    const projectModalTitle = document.getElementById('projectTitle');
+    const projectModalCategory = document.getElementById('projectCategory');
+    const projectCloseBtn = projectModal.querySelector('.project-close');
 
-projectLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    projectModal.style.display = "block";
-    projectModalImg.src = link.dataset.image;
-    projectModalTitle.textContent = link.dataset.title;
-    projectModalCategory.textContent = link.dataset.category;
-  });
-});
+    projectLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Project link clicked:', link.dataset);
+        
+        if (projectModalImg && projectModalTitle && projectModalCategory) {
+          projectModal.style.display = "block";
+          projectModal.style.visibility = "visible";
+          projectModal.style.opacity = "1";
+          projectModalImg.src = link.dataset.image;
+          projectModalTitle.textContent = link.dataset.title;
+          projectModalCategory.textContent = link.dataset.category;
+          console.log('Modal should be visible now');
+        }
+      });
+    });
 
-projectCloseBtn.onclick = function() {
-  projectModal.style.display = "none";
-}
+    if (projectCloseBtn) {
+      projectCloseBtn.onclick = function() {
+        projectModal.style.display = "none";
+      }
+    }
 
-// Tutup modal project kalau klik di luar modal
-projectModal.onclick = function(e) {
-  if (e.target === projectModal) {
-    projectModal.style.display = "none";
+    // Tutup modal project kalau klik di luar modal
+    projectModal.onclick = function(e) {
+      if (e.target === projectModal) {
+        projectModal.style.display = "none";
+      }
+    }
   }
-}
+});
